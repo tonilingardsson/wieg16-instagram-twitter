@@ -12,10 +12,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/customers', 'CustomersController@showCustomers');
-Route::get('/customers/by-company/{id}', 'CustomersController@showCustomersByCompanyId');
-Route::get('/customers/{id}', 'CustomersController@showCustomer');
-Route::get('/customers/{id}/address', 'CustomersController@showCustomerAddress');
-Route::resource('products', 'ProductController');
-Route::resource('groups', 'GroupController');
-Route::resource('group-prices', 'GroupPriceController');
+Route::get('/instagram-gallery', 'InstagramController@showAll');
+Route::get('/tweets', 'TwitterController@showAll');
+Route::get('/tweet-count', 'TwitterController@count');
+Route::get('/exclude', 'TwitterController@exclude');
+Route::get('/tweet-form', 'TwitterController@tweetForm');

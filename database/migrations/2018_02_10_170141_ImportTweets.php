@@ -13,9 +13,13 @@ class ImportTweets extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('tweets', function (Blueprint $table) {
+            $table->bigInteger('id', false, true)->primary();
+            $table->string('id_str', 50)->nullable();
+            $table->string('created_at', 250)->nullable();
+            $table->string('text', 280)->nullable();
+        });
     }
-
     /**
      * Reverse the migrations.
      *
@@ -23,6 +27,6 @@ class ImportTweets extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('tweets');
     }
 }
